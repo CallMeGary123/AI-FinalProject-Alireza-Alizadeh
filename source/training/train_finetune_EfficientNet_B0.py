@@ -11,7 +11,7 @@ from tqdm import tqdm
 from sklearn.metrics import confusion_matrix
 
 def train_model():
-    # --- 1. CONFIG & DIRECTORIES ---
+    # --- CONFIG & DIRECTORIES ---
     # Renaming to keep results organized
     MODEL_NAME = "efficientnet_b0_finetuned"
     RESULTS_DIR = f"results/{MODEL_NAME}"
@@ -22,7 +22,7 @@ def train_model():
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # --- 2. DATA LOADERS ---
+    # --- DATA LOADERS ---
     data_transforms = {
         'train': transforms.Compose([
             transforms.RandomHorizontalFlip(),
@@ -49,11 +49,10 @@ def train_model():
     train_raw.dataset.transform = data_transforms['train']
     val_raw.dataset.transform = data_transforms['val']
 
-    # 1660 Ti Tip: batch_size=32 is safe for EfficientNet-B0
     train_loader = DataLoader(train_raw, batch_size=32, shuffle=True, num_workers=4)
     val_loader = DataLoader(val_raw, batch_size=32, shuffle=False, num_workers=4)
 
-    # --- 3. EFFICIENTNET-B0 SETUP ---
+    # --- EFFICIENTNET-B0 SETUP ---
     # Load pre-trained EfficientNet-B0
     model = models.efficientnet_b0(weights=models.EfficientNet_B0_Weights.DEFAULT)
     
@@ -67,7 +66,7 @@ def train_model():
     model.classifier[1] = nn.Linear(in_features, num_classes)
     model = model.to(device)
 
-    # --- 4. DIFFERENTIAL LEARNING RATES ---
+    # --- DIFFERENTIAL LEARNING RATES ---
     criterion = nn.CrossEntropyLoss()
 
     # EfficientNet groups its layers in the 'features' module.
@@ -80,7 +79,7 @@ def train_model():
 
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=2)
 
-    # --- 5. TRAINING LOOP ---
+    # --- TRAINING LOOP ---
     num_epochs = 20
     history = []
     best_acc = 0.0
@@ -134,7 +133,7 @@ def train_model():
             print("Early stopping triggered.")
             break
 
-    # --- 6. LOGGING, PLOTTING & CONFUSION MATRIX ---
+    # --- LOGGING, PLOTTING & CONFUSION MATRIX ---
     # Save CSV
     df = pd.DataFrame(history)
     df.to_csv(f"{RESULTS_DIR}/metrics.csv", index=False)
