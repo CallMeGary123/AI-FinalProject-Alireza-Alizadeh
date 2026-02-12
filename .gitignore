@@ -2,3 +2,4 @@ Data/processed
 Data/raw
 *.csv
 *.zip
+*.pth
