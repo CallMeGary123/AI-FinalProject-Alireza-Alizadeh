@@ -37,6 +37,8 @@ Andrei Rublev,99
 ```
 ## Models
 Tim uses the following models and finetunes them on our dataset.
+
+Model structures can be found at `results\charts\structures`
 <table style="width:100%; border-collapse: collapse; margin: 25px 0; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">
     <thead>
         <tr style="background-color: #2c3e50; color: #ffffff; text-align: left;">
@@ -114,7 +116,7 @@ The following is the raw structure. Folders and files may be created as you run 
 ```
 ## Order of Operation
 This section regards result reproducibility.
-## Preprocessing
+## Preprocessing and Training
 Run scripts in the following order:
 - 1- `source\preprocessing\prep.py` Extract the zip archive and clean up our data directory to get rid of unnecessarily nested folders
 - 2- `source\preprocessing\name_correction.py` Remove duplicates and rename the artworks to the appropriate name
@@ -122,7 +124,10 @@ Run scripts in the following order:
 - 4- `source\preprocessing\resize_padding.py` Resize to 224×224 (Padding)
 
 Now you can run any of the scirpts in the `source\training` or `source\experiments` to train your desired model.
+## Notebooks and Documents
+The [EDA](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/blob/master/notebooks/EDA.ipynb), [Training results](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/blob/master/notebooks/training_results.ipynb) and [Experiments results](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/blob/master/notebooks/experiments_results.ipynb) notbooks which explore our data and results have been uploaded post-exec and the outputs can be examined.
 
+Additionally reports for phase 1 and phase 2 are available at the [documents](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/tree/master/documents) folder.
 ## Demo
 To demo your trained models run the following notebook. `notebooks\interactive_demo.ipynb`
 
