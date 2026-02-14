@@ -23,6 +23,7 @@ Now you can run any of the scirpts in the `source\training` or `source\experimen
 To demo your trained models run the following notebook. `notebooks\interactive_demo.ipynb`
 
 **For the demo to work you'll need `data\classes.csv` and at least one model in the `models\` directory.**
+<img width="819" height="1079" alt="image" src="https://github.com/user-attachments/assets/0da7a963-8541-490f-bd90-e178a8f1e059" />
 
 ## Trained models
 Trained models can be found [here](https://drive.google.com/drive/folders/1kdbbSOqvKl_gjqTs6UscykaOPi98Naie).
