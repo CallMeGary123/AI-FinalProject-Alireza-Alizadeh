@@ -123,7 +123,7 @@ Run scripts in the following order:
 - 3- `source\preprocessing\resize.py` Resize to 224×224 (Scaling)
 - 4- `source\preprocessing\resize_padding.py` Resize to 224×224 (Padding)
 
-Now you can run any of the scirpts in the `source\training` or `source\experiments` to train your desired model.
+Now you can run any of the scirpts in the `source\training` or `source\experiments` to train and evaluate your desired model.
 ## Notebooks and Documents
 The [EDA](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/blob/master/notebooks/EDA.ipynb), [Training results](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/blob/master/notebooks/training_results.ipynb) and [Experiments results](https://github.com/CallMeGary123/AI-FinalProject-Alireza-Alizadeh/blob/master/notebooks/experiments_results.ipynb) notbooks which explore our data and results have been uploaded post-exec and the outputs can be examined.
 
