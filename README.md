@@ -20,9 +20,9 @@ Run scripts in the following order:
 Now you can run any of the scirpts in the `source\training` or `source\experiments` to train your desired model.
 
 ## Demo
-To demo your traind models run the following notebook. `notebooks\interactive_demo.ipynb`
+To demo your trained models run the following notebook. `notebooks\interactive_demo.ipynb`
 
-**For the demo to work you'll need the `data\classes.csv` and at least one model in the `models\` directory.**
+**For the demo to work you'll need `data\classes.csv` and at least one model in the `models\` directory.**
 
 ## Trained models
 Trained models can be found [here](https://drive.google.com/drive/folders/1kdbbSOqvKl_gjqTs6UscykaOPi98Naie).
